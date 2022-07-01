@@ -24,14 +24,30 @@ limitations under the License.
 
 > Detect native [`Map`][mdn-map] support.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/assert-has-map-support
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import hasMapSupport from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-has-map-support@deno/mod.js';
+var hasMapSupport = require( '@stdlib/assert-has-map-support' );
 ```
 
 #### hasMapSupport()
@@ -54,7 +70,7 @@ var bool = hasMapSupport();
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import hasMapSupport from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-has-map-support@deno/mod.js';
+var hasMapSupport = require( '@stdlib/assert-has-map-support' );
 
 var bool = hasMapSupport();
 if ( bool ) {
@@ -68,7 +84,59 @@ if ( bool ) {
 
 <!-- /.examples -->
 
+* * *
 
+<section class="cli">
+
+## CLI
+
+<section class="installation">
+
+## Installation
+
+To use the module as a general utility, install the module globally
+
+```bash
+npm install -g @stdlib/assert-has-map-support
+```
+
+</section>
+
+<!-- CLI usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```text
+Usage: has-map-support [options]
+
+Options:
+
+  -h,    --help                Print this message.
+  -V,    --version             Print the package version.
+```
+
+</section>
+
+<!-- /.usage -->
+
+<section class="examples">
+
+### Examples
+
+```bash
+$ has-map-support
+<boolean>
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.cli -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -87,7 +155,7 @@ if ( bool ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -143,6 +211,7 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 [deno-url]: https://github.com/stdlib-js/assert-has-map-support/tree/deno
 [umd-url]: https://github.com/stdlib-js/assert-has-map-support/tree/umd
 [esm-url]: https://github.com/stdlib-js/assert-has-map-support/tree/esm
+[branches-url]: https://github.com/stdlib-js/assert-has-map-support/blob/main/branches.md
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/assert-has-map-support/main/LICENSE
 
