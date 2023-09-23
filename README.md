@@ -42,7 +42,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import hasMapSupport from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-has-map-support@esm/index.mjs';
+import hasMapSupport from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-has-map-support@v0.1.0-esm/index.mjs';
 ```
 
 #### hasMapSupport()
@@ -70,7 +70,7 @@ var bool = hasMapSupport();
 <body>
 <script type="module">
 
-import hasMapSupport from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-has-map-support@esm/index.mjs';
+import hasMapSupport from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-has-map-support@v0.1.0-esm/index.mjs';
 
 var bool = hasMapSupport();
 if ( bool ) {
