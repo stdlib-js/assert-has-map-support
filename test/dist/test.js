@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2018 The Stdlib Authors.
+* Copyright (c) 2023 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -21,130 +21,13 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var proxyquire = require( 'proxyquire' );
-var hasOwnProp = require( '@stdlib/assert-has-own-property' );
-var detect = require( './../../dist' );
-
-
-// VARIABLES //
-
-var hasMap = ( typeof Map === 'function' );
+var main = require( './../../dist' );
 
 
 // TESTS //
 
-tape( 'main export is a function', function test( t ) {
+tape( 'main export is defined', function test( t ) {
 	t.ok( true, __filename );
-	t.strictEqual( typeof detect, 'function', 'main export is a function' );
+	t.strictEqual( main !== void 0, true, 'main export is defined' );
 	t.end();
-});
-
-tape( 'feature detection result is a boolean', function test( t ) {
-	t.strictEqual( typeof detect(), 'boolean', 'detection result is a boolean' );
-	t.end();
-});
-
-tape( 'if `Map` is supported, detection result is `true`', function test( t ) {
-	var mocked;
-	if ( hasMap ) {
-		t.strictEqual( detect(), true, 'detection result is `true`' );
-	} else {
-		t.strictEqual( detect(), false, 'detection result is `false`' );
-	}
-	mocked = proxyquire( './../dist/main.js', {
-		'./map.js': Mock
-	});
-	t.strictEqual( mocked(), true, 'detection result is `true` (mocked)' );
-
-	t.end();
-
-	function Mock() {
-		var o = {};
-		function has( key ) {
-			return hasOwnProp( o, key );
-		}
-		function set( key, value ) {
-			o[ key ] = value;
-		}
-		function get( key ) {
-			return o[ key ];
-		}
-		return {
-			'has': has,
-			'set': set,
-			'get': get
-		};
-	}
-});
-
-tape( 'if `Map` is not supported, detection result is `false`', function test( t ) {
-	var mocked;
-	if ( hasMap ) {
-		t.strictEqual( detect(), true, 'detection result is `true`' );
-	} else {
-		t.strictEqual( detect(), false, 'detection result is `false`' );
-	}
-	mocked = proxyquire( './../dist/main.js', {
-		'./map.js': {}
-	});
-	t.strictEqual( mocked(), false, 'detection result is `false` (mocked)' );
-
-	mocked = proxyquire( './../dist/main.js', {
-		'./map.js': Mock1
-	});
-	t.strictEqual( mocked(), false, 'detection result is `false` (no `has` method)' );
-
-	mocked = proxyquire( './../dist/main.js', {
-		'./map.js': Mock2
-	});
-	t.strictEqual( mocked(), false, 'detection result is `false` (no `set` method)' );
-
-	mocked = proxyquire( './../dist/main.js', {
-		'./map.js': Mock3
-	});
-	t.strictEqual( mocked(), false, 'detection result is `false` (no `get` method)' );
-
-	t.end();
-
-	function Mock1() {
-		var o = {};
-		function set( key, value ) {
-			o[ key ] = value;
-		}
-		function get( key ) {
-			return o[ key ];
-		}
-		return {
-			'set': set,
-			'get': get
-		};
-	}
-
-	function Mock2() {
-		var o = {};
-		function has( key ) {
-			return hasOwnProp( o, key );
-		}
-		function get( key ) {
-			return o[ key ];
-		}
-		return {
-			'has': has,
-			'get': get
-		};
-	}
-
-	function Mock3() {
-		var o = {};
-		function has( key ) {
-			return hasOwnProp( o, key );
-		}
-		function set( key, value ) {
-			o[ key ] = value;
-		}
-		return {
-			'has': has,
-			'set': set
-		};
-	}
 });
